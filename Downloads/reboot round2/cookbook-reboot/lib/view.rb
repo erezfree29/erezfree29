@@ -1,11 +1,14 @@
 class View
   def display(recipes)
-    x=''
+    x = ''
     recipes.each_with_index do |recipe, index|
-      if recipe.is_marked?
-        x = 'x'
-      end
-      puts "[#{x}]-#{index + 1}- #{recipe.name}: #{recipe.description} :#{recipe.difficulty} :#{recipe.prep_time}"
+     if recipe.is_marked?
+      x ='x'
+     else
+      x = ''
+     end
+
+      puts "[#{x}]-#{index-1}- #{recipe.name}: #{recipe.description} :#{recipe.difficulty} :#{recipe.prep_time}"
     end
 
   end
